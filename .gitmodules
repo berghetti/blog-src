@@ -1,0 +1,7 @@
+[submodule "blog/themes/dark-theme-editor"]
+	path = blog/themes/dark-theme-editor
+	url = https://github.com/JingWangTW/dark-theme-editor.git
+[submodule "blog/public"]
+	path = blog/public
+	url = git@github.com:berghetti/berghetti.github.io.git
+	branch = main
