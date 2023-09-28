@@ -7,5 +7,9 @@ categories: []
 description: ""
 draft: false
 ---
+Um blog sobre programação, Linux, redes e outros assuntos, provavelmente relacionados\
+à computação, que eu possa ter interesse.
 
-
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbODE1NzMzMDE3XX0=
+-->
