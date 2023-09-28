@@ -1,6 +1,11 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-draft: true
+author: "Mayco S. Berghetti"
+tags: []
+categories: []
+description: ""
+draft: false
 ---
+
 

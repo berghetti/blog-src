@@ -48,7 +48,9 @@
                                     </li>
                                     <p>
                                         {{ $page.Summary }}
-                                        {{ if .Truncated }} ... {{ end }}
+                                        {{ if .Truncated }}
+                                        <a href="{{ .RelPermalink }}"> ... </a>
+                                        {{ end }}
                                     </p>
                                 {{ end }}
                             </ul>

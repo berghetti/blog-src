@@ -1,8 +1,17 @@
 baseURL = 'https://berghetti.github.io/'
 languageCode = 'pt-br'
-title = 'The my blog'
+title = 'Mayco Blog'
+author = 'Mayco S. Berghetti'
 theme = 'dark-theme-editor'
 
+[params]
+  AuthorName = 'Mayco S. Berghetti'
+
+# Customized info shown in header of the page
+[params.header]
+  title = ""
+
+# syntax highlight
 [markup]
   [markup.highlight]
     anchorLineNos = false
@@ -11,7 +20,7 @@ theme = 'dark-theme-editor'
     hl_Lines = ''
     hl_inline = false
     lineAnchors = ''
-#    lineNoStart = 1
+    lineNoStart = 1
     lineNos = true
     lineNumbersInTable = true
     noClasses = true
