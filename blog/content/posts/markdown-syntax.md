@@ -61,7 +61,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports them out-of-the-
     Bob | 27
   Alice | 23
 
-#### Inline Markdown within tables
+### Inline Markdown within tables
 
 | Italics   | Bold     | Code   |
 | --------  | -------- | ------ |
@@ -147,5 +147,6 @@ Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the ses
 
 Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDczMDE5MjMsMTY4ODU2NTU3M119
+eyJoaXN0b3J5IjpbLTk2MDA1MDg2MiwtMTIwNzMwMTkyMywxNj
+g4NTY1NTczXX0=
 -->
