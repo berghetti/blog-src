@@ -47,10 +47,10 @@
                                         {{ end }}
                                     </li>
                                     <p>
-                                        {{ $page.Summary }}
-                                        {{ if .Truncated }}
-                                        <a href="{{ .RelPermalink }}"> ... </a>
-                                        {{ end }}
+                                        {{ $page.Summary | truncate 500}}
+                                        <!--{{ if .Truncated  }}
+                                        <a href="{{ .RelPermalink }}">... </a>
+                                        {{ end }}-->
                                     </p>
                                 {{ end }}
                             </ul>

@@ -27,3 +27,8 @@ theme = 'dark-theme-editor'
     noHl = false
     style = 'monokai'
     tabWidth = 2
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+  author = 'author'
