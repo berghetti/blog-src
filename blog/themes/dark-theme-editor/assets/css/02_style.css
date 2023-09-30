@@ -187,12 +187,42 @@ article.main > nav#TableOfContents a:hover {
     text-decoration: underline;
 }
 
+/* author bio */
+article.main > div.author-bio > h2,
+article.main > div.author-network > h2,
+article.main > div.author-posts > h2 {
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+article.main > div.author-bio > p {
+    margin-left: 15pt;
+}
+
+article.main > div.author-bio,
+article.main > div.author-network,
+article.main > div.author-posts{
+    margin-bottom: 25pt;
+}
+
+article.main > div.author-bio > h2,
+article.main > div.author-network > h2,
+article.main > div.author-posts > h2{
+    margin-bottom: 10pt;
+}
+
+article.main > div.author-network > i{
+    font-size: 1rem;
+    margin-right: 20pt;
+    margin-left: 15pt;
+}
+
 article.main > div.list-files ul.section-tree {
     font-size: 14pt;
 }
 
 article.main > div.list-files ul.section-tree > li {
-    line-height: 140%;
+    line-height: 150%;
     padding-left: 5pt;
 }
 
@@ -204,19 +234,31 @@ article.main > div.list-files > ul.section-tree > li.file:hover {
     color: white;
 }
 
+/* authors taxonomy */
+article.main > div.list-authors > ul {
+    display: flex;
+}
+
+article.main > div.list-authors > ul > li > span {
+    margin-left: 10pt;
+}
+
+
 article.main > div.list-terms > ul {
     display: flex;
     flex-wrap: wrap;
 }
 
-article.main > div.list-terms > ul > li {
+article.main > div.list-terms > ul > li,
+article.main > div.list-authors > ul > li {
     border: 1px solid #6c6d6e;
     border-radius: 30px;
     padding: 0.5em 1em;
     margin: 0.5em 1em;
 }
 
-article.main > div.list-terms > ul > li:hover {
+article.main > div.list-terms > ul > li:hover,
+article.main > div.list-authors > ul > li:hover{
     border-color: #969697;
     border-width: 2px;
     color: white;

@@ -4,12 +4,9 @@ title = 'Mayco Blog'
 author = 'Mayco S. Berghetti'
 theme = 'dark-theme-editor'
 
-[params]
-  AuthorName = 'Mayco S. Berghetti'
-
 # Customized info shown in header of the page
 [params.header]
-  title = ""
+  title = "Blog"
 
 # syntax highlight
 [markup]
@@ -31,4 +28,4 @@ theme = 'dark-theme-editor'
 [taxonomies]
   category = 'categories'
   tag = 'tags'
-  author = 'author'
+  author = 'authors'

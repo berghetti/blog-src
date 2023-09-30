@@ -5,7 +5,6 @@
 
 # Support Taxonomies
 [taxonomies]
-    autor = "author"
     tag = "tags"
     category = "categories"
 
@@ -48,7 +47,7 @@
     # Customized info shown in header of the page
     [params.header]
         # Website title for header banner.
-        title = "My New Hugo Site"
+        title = ""
 
         # Subtitle for this site, used in homepage only
         subtitle = ""

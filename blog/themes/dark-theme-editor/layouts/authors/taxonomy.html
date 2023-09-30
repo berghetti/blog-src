@@ -5,6 +5,7 @@
         <div class="title">
             <h1 class="title-header">
                 {{ partial "module/term_icon" . }}
+
                 {{ .Title }}
             </h1>
         </div>
@@ -18,14 +19,15 @@
 
         <hr />
 
-        <div class="list-terms">
+        <div class="list-authors">
             <ul>
                 {{ range .Pages }}
                     <li>
                         <a href="{{ .Permalink }}">
                             {{ partial "module/term_icon" . }}
-                            {{ .Title }}
+                            {{ .Param "name" }}
                         </a>
+                        <span class="post-count">{{ len .Pages }}</span>
                     </li>
                 {{ end }}
             </ul>

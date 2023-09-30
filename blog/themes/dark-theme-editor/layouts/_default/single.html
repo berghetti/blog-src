@@ -16,17 +16,23 @@
             </h1>
 
             <div class="author-date-readtime">
-                {{ if isset $.Params "author" }}
+
+                {{ if isset $.Params "authors" }}
 
                     {{ if or ( and ( not (isset $.Params "showAuthor") ) $.Site.Params.page.showAuthor ) $.Params "showAuthor" }}
+
+                    {{ with .Params.authors }}
+                    {{ range . }}
                         <div class="author">
                             <i class="bi bi-person"></i>
                             <a
-                                href="{{ "author" | absURL }}/{{ $.Params.author | urlize }}/"
+                                href="{{ "authors" | absURL }}/{{ . | urlize }}/"
                                 class="cat-btn">
-                                {{ $.Params.author }}
+                                {{ . }}
                             </a>
                         </div>
+                    {{ end }}
+                    {{ end }}
                     {{ end }}
 
                 {{ else if isset $.Site.Params.globalFrontmatter "author" }}

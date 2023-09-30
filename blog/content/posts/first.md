@@ -1,7 +1,7 @@
 ---
-title: "Meu Primeiro Post testeFirst"
+title: "Meu Primeiro Post teste"
 date: 2023-09-26T18:23:03-04:00
-author: "Mayco S. Berghetti"
+authors: ["Mayco S. Berghetti"]
 tags: [ "teste" ]
 categories: [
     "cteste1",
@@ -13,8 +13,6 @@ draft: false
 ---
 
 ## Introdução
-
-
 
 Iniciando meu blog!
 

@@ -1,0 +1,70 @@
+{{ define "main_article" }}
+    <article class="main">
+        {{ partial "module/sidebar_btn" . }}
+
+        <div class="title">
+            <h1 class="title-header">
+                {{ partial "module/term_icon" . }}
+
+                <em>
+                    {{ $.Param "name" }}
+                </em>
+            </h1>
+        </div>
+
+        <div class="article-meta">
+            <div class="breadcumb">
+                <i class="bi bi-folder"></i>
+                {{ partial "module/breadcrumb_authors" . }}
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="author-bio">
+            <h2>Bio</h2>
+          <p>
+             {{ .Content }}
+          </p>
+
+        </div>
+
+        {{ if or
+            (isset .Params "git")
+            (isset .Params "twitter")
+            (isset .Params "youtube")
+         }}
+        <div class="author-network">
+            <h2> Network </h2>
+        {{ with $.Param "git" }}
+            <i class="bi bi-github">
+                <a href="{{ . }}" rel="author">Github</a>
+            </i>
+        {{ end }}
+        {{ with $.Param "twitter" }}
+            <i class="bi bi-twitter">
+                <a href="{{ . }}" rel="author">Twitter</a>
+            </i>
+        {{ end }}
+        {{ with $.Param "youtube" }}
+            <i class="bi bi-youtube">
+                <a href="{{ . }}" rel="author">YouTube</a>
+            </i>
+        {{ end }}
+        </div>
+        {{ end }}
+
+        <div class="author-posts">
+            <h2> Posts </h2>
+            <ul class="section-tree">
+                {{ range .Pages }}
+                    <li class="file">
+                        <a href="{{ .Permalink }}">
+                            {{ .Title }}
+                        </a>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+    </article>
+{{ end }}
