@@ -211,6 +211,12 @@ article.main > div.author-posts > h2{
     margin-bottom: 10pt;
 }
 
+
+article.main > div.author-posts li {
+    font-size: 1.2rem;
+}
+
+
 article.main > div.author-network > i{
     font-size: 1rem;
     margin-right: 20pt;
