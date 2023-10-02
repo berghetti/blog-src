@@ -6,12 +6,12 @@ tags: [ "C" ]
 categories: [
     "programming"
 ]
-draft: true
+draft: false
 ---
 
 O qualificador *restrict* diz ao compilador que um ponteiro não tem um *aliasing*, ou seja, não existe outro ponteiro que modifique o objeto.
 
 Usar *restrict* possibilita que o compilador possa otimizar melhor o código.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4OTA4NjI2NSwtNjAxNjY5Njk0XX0=
+eyJoaXN0b3J5IjpbMTg1MDk5MDI0NCwtNjAxNjY5Njk0XX0=
 -->
