@@ -10,7 +10,9 @@ draft: true
 ---
 
 O qualificador `restrict` diz ao compilador que um determinado ponteiro não possui `aliasing`.
+`Aliasing`, é quando
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUxMTM3MjQ5Miw1NDkxOTAwMTQsMTkyOD
-U1Nzk2OCw1MDU5NjIzNCw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbLTIwMTE4MDk3MTUsLTUxMTM3MjQ5Miw1ND
+kxOTAwMTQsMTkyODU1Nzk2OCw1MDU5NjIzNCw3MzA5OTgxMTZd
+fQ==
 -->
