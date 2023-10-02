@@ -9,7 +9,7 @@ categories: [
 draft: true
 ---
 
-O qualificador `restrict` em C é utilizado p
+O qualificador `restrict` é utilizado para dizermos ao compilador que um ponteiro 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzA0Njk1ODM2LDczMDk5ODExNl19
+eyJoaXN0b3J5IjpbLTE2MDU4MzM0NjksNzMwOTk4MTE2XX0=
 -->
