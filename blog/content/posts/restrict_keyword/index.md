@@ -41,7 +41,8 @@ g:
   ret
 ```
 
-Na função `f`, temos três acessos à memória. Isso ocorre porque quando atualizamos o valor
+Na função `f`, temos três acessos à memória. Isso ocorre porque quando atualizamos o valor de `*b`,
+o compilador não tem garantia de que o objeto apontado por `a` não foi m. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcwNjk4NjQxOF19
+eyJoaXN0b3J5IjpbLTE1NTI4NjI0NzBdfQ==
 -->
