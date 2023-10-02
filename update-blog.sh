@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#
 # fetch changes made online (i.e stackedit.io)
 git pull
 
