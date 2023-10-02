@@ -9,8 +9,9 @@ categories: [
 draft: false
 ---
 
-O qualificador *restrict* diz ao compilador que um ponteiro não tem um *aliasing*, \
-ou seja, não existe outro ponteiro que modifique o objeto.Por exemplo, uma função que possui a assinatura `int f(int *a, int *b)`, os ponteiros `a` e `b` podem apontar para o mesmo objeto. O compilador tem que levar isso em consideração ao gerar o código.
+O qualificador *restrict* diz ao compilador que um ponteiro não tem um *aliasing*,
+ou seja, não existe outro ponteiro que modifique o objeto. Por exemplo, uma função
+que possui a assinatura `int f(int *a, int *b)`, os ponteiros `a` e `b` podem apontar para o mesmo objeto. O compilador tem que levar isso em consideração ao gerar o código.
 
 Se sabemos que os ponteiros não apontam para o mesmo objeto, dizemos isso ao compilador usando a palavra-chave *restrict*.  Isso permite que o código possa ser melhor otimizado. Compare o código gerado pelas funções abaixo.
 
@@ -45,7 +46,7 @@ g:
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5ODg0MzUyNiwtMTYyMDU1MDA0NCwtMT
+eyJoaXN0b3J5IjpbMTAwODk3OTg5MiwtMTYyMDU1MDA0NCwtMT
 AxMDEzODg4MiwyMDEwMTY5NzkxLDE5NTMwNzY2MTksODMxMDgw
 MDIsLTEzMDc5NDM3NzgsMTg1MDk5MDI0NCwtNjAxNjY5Njk0XX
 0=
