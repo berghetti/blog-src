@@ -42,7 +42,7 @@ g:
 ```
 
 Na função `f`, temos três acessos à memória. Isso ocorre porque quando atualizamos o valor de `*b`,
-o compilador não tem garantia de que o objeto apontado por `a` não foi m. 
+o compilador não tem garantia de que o objeto apontado por `a` não foi modificado. Assim, para retornar o valor de `*a` um novo acesso à memória é feito ao invés de, apenas, preservar o valor previamente atribuído a `*a`.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NTI4NjI0NzBdfQ==
+eyJoaXN0b3J5IjpbOTAwODc0MjUzXX0=
 -->
