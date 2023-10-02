@@ -21,14 +21,15 @@ int f(int *a, int *b)
 ```
 
 ```asm
-int f(int *a, int *b)
-{
-  
-}
+mov  DWORD  PTR  [rdi], edx
+mov  eax, ecx
+mov  DWORD  PTR  [rsi], ecx
+add  eax, DWORD  PTR  [rdi]
+ret
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTAxNzkwNTMsMTk1MzA3NjYxOSw4MzEwOD
-AwMiwtMTMwNzk0Mzc3OCwxODUwOTkwMjQ0LC02MDE2Njk2OTRd
-fQ==
+eyJoaXN0b3J5IjpbMjAxMDE2OTc5MSwxOTUzMDc2NjE5LDgzMT
+A4MDAyLC0xMzA3OTQzNzc4LDE4NTA5OTAyNDQsLTYwMTY2OTY5
+NF19
 -->
