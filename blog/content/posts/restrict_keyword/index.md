@@ -42,9 +42,8 @@ g:
 ```
 
 Na função `f`, temos três acessos à memória. Isso ocorre porque quando atualizamos o valor de `*b`,
-o compilador não tem garantia de que o objeto `*a` não foi modificado. Assim, para retornar o valor de `*a` um novo acesso à memória é feito ao invés de, apenas, preservar o valor previamente atribuído.
-A função `g`, devido a não precisar carregar novamente o valor de `*a`, economiza um acesso à memória. Aqui
-o compilador pode assumir que o valor de `*a`não é alterado após a atribuição inicial.
+o compilador não tem garantia de que o objeto `*a` não foi modificado. Assim, para retornar o valor de `*a`, um novo acesso à memória é feito ao invés de, apenas, preservar o valor previamente atribuído.
+A função `g`, devido a não precisar carregar novamente o valor de `*a`, possui um acesso à memória a menos. Aqui o compilador pode assumir que o valor de `*a`não é alterado após a atribuição inicial.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUwMTM0Mjc5XX0=
+eyJoaXN0b3J5IjpbLTE3Mzc3MjE2NCwxNTAxMzQyNzldfQ==
 -->
