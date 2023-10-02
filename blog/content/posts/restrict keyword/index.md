@@ -29,15 +29,14 @@ int g(int  *restrict a,  int  *restrict b)
 
 ```asm
 f:
-  mov  DWORD  PTR  [rdi], edx
-  mov  eax, ecx
-  mov  DWORD  PTR  [rsi], ecx
-  add  eax, DWORD  PTR  [rdi]
+  mov  DWORD  PTR  [rdi], 1
+  mov  DWORD  PTR  [rsi], 2
+  mov  eax, DWORD  PTR  [rdi]
   ret
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3MDE5ODE5NiwtMTAxMDEzODg4MiwyMD
-EwMTY5NzkxLDE5NTMwNzY2MTksODMxMDgwMDIsLTEzMDc5NDM3
-NzgsMTg1MDk5MDI0NCwtNjAxNjY5Njk0XX0=
+eyJoaXN0b3J5IjpbLTE3MzUzNjc5NDUsLTEwMTAxMzg4ODIsMj
+AxMDE2OTc5MSwxOTUzMDc2NjE5LDgzMTA4MDAyLC0xMzA3OTQz
+Nzc4LDE4NTA5OTAyNDQsLTYwMTY2OTY5NF19
 -->
