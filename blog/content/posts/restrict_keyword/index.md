@@ -40,4 +40,3 @@ g:
   mov  DWORD  PTR  [rsi], 2 ; *b = 2
   ret
 ```
-
