@@ -12,7 +12,7 @@ draft: false
 O qualificador *restrict* diz ao compilador que um ponteiro não tem um *aliasing*, ou seja, não existe outro ponteiro que modifique o objeto. Por exemplo, uma função que possui a assinatura `int f(int *a, int *b)`, os ponteiros `a` e `b` podem apontar para o mesmo objeto. O compilador tem que levar isso em consideração ao gerar o código.
 
 Se sabemos que os ponteiros não apontam para o mesmo objeto, dizemos isso ao compilador usando a palavra-chave *restrict*.  Isso permite que o código possa ser melhor otimizado.
-Veja um exemplo para as funções `f` e `g`abaixo. A única diferença entre as funções é a assinatura.
+Como exemplo, tome as funções `f` e `g`abaixo. A única diferença entre elas é a assinatura.
 
 ```c
 int
@@ -24,9 +24,7 @@ g( int  *restrict a,  int  *restrict b)
   return  *a;
 }
 ```
-
-Veja um exemplo do código gerado para as funções `f` e `g` acima.
-A única diferença entre as funções é a assinatura.
+Veja o código gerado.
 
 ```asm
 f:
@@ -46,6 +44,6 @@ Na função `f`, temos três acessos à memória. Isso ocorre porque quando atua
 o compilador não tem garantia de que o objeto `*a` não foi modificado. Assim, para retornar o valor de `*a`, um novo acesso à memória é feito ao invés de, apenas, preservar o valor previamente atribuído.
 A função `g`, devido a não precisar carregar novamente o valor de `*a`, possui um acesso à memória a menos. Aqui o compilador pode assumir que o valor de `*a`não é alterado após a atribuição inicial.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzE1MTczNzY2LC0xNzM3NzIxNjQsMTUwMT
+eyJoaXN0b3J5IjpbNjY4MzA0MTU2LC0xNzM3NzIxNjQsMTUwMT
 M0Mjc5XX0=
 -->
