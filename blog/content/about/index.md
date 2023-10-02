@@ -9,8 +9,8 @@ draft: false
 ---
 
 Um blog sobre programação, Linux, redes e outros assuntos, provavelmente relacionados\
-à computação, que eu possa ter interesse.
+à computação, que [eu](/authors/mayco-s.-berghetti) possa ter interesse.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkxNjY2NzE1OV19
+eyJoaXN0b3J5IjpbMjE0NjQ5MzE2MSwtOTE2NjY3MTU5XX0=
 -->
