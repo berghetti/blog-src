@@ -9,7 +9,7 @@ categories: [
 draft: true
 ---
 
-
+O qualificador `restrict` em C é utilizado p
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0MTQ1MTY2Miw3MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbMzA0Njk1ODM2LDczMDk5ODExNl19
 -->
