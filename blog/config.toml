@@ -4,6 +4,8 @@ title = 'Mayco Blog'
 author = 'Mayco S. Berghetti'
 theme = 'dark-theme-editor'
 
+enableGitInfo = true
+
 # Customized info shown in header of the page
 [params.header]
   title = "Blog"
