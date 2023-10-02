@@ -9,7 +9,7 @@ categories: [
 draft: true
 ---
 
-O qualificador `restrict` é utilizado para dizermos ao compilador que um ponteiro 
+O qualificador `restrict` é utilizado para dizermos ao compilador que um ponteiro não possui 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDU4MzM0NjksNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbNTA1OTYyMzQsNzMwOTk4MTE2XX0=
 -->
