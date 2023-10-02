@@ -13,8 +13,7 @@ O qualificador *restrict* diz ao compilador que um ponteiro não tem um *aliasin
 ou seja, não existe outro ponteiro que modifique o objeto. Por exemplo, uma função
 que possui a assinatura `int f(int *a, int *b)`, os ponteiros `a` e `b` podem apontar para o mesmo objeto. O compilador tem que levar isso em consideração ao gerar o código.
 
-Se sabemos que os ponteiros não apontam para o mesmo objeto, dizemos isso ao compilador usando a palavra-chave *restrict*.  Isso permite que o código possa ser melhor otimizado. Compare o código gerado pelas funções abaixo.
-
+Se sabemos que os ponteiros não apontam para o mesmo objeto, dizemos isso ao compilador usando a palavra-chave *restrict*.  Isso permite que o código possa ser melhor otimizado. 
 ```c
 int
 f ( int  *a,  int  *b)
@@ -46,8 +45,8 @@ g:
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwODk3OTg5MiwtMTYyMDU1MDA0NCwtMT
-AxMDEzODg4MiwyMDEwMTY5NzkxLDE5NTMwNzY2MTksODMxMDgw
-MDIsLTEzMDc5NDM3NzgsMTg1MDk5MDI0NCwtNjAxNjY5Njk0XX
-0=
+eyJoaXN0b3J5IjpbOTc4MTY4NzI1LDEwMDg5Nzk4OTIsLTE2Mj
+A1NTAwNDQsLTEwMTAxMzg4ODIsMjAxMDE2OTc5MSwxOTUzMDc2
+NjE5LDgzMTA4MDAyLC0xMzA3OTQzNzc4LDE4NTA5OTAyNDQsLT
+YwMTY2OTY5NF19
 -->
