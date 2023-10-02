@@ -25,7 +25,7 @@ g( int  *restrict a,  int  *restrict b)
 ```
 
 Veja um exemplo do código gerado para as funções `f` e `g` acima.
-A unica diferença entre elas é a assinatura da função.
+A única diferença entre as funções é a assinatura.
 
 ```asm
 f:
@@ -40,3 +40,8 @@ g:
   mov  DWORD  PTR  [rsi], 2 ; *b = 2
   ret
 ```
+
+Na função `f`, temos três acessos à memória. Isso ocorre porque quando atualizamos o valor
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTcwNjk4NjQxOF19
+-->
