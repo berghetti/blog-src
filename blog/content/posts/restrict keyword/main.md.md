@@ -9,9 +9,11 @@ categories: [
 draft: true
 ---
 
-O qualificador `restrict` diz ao compilador que um ponteiro não tem um `aliasing`, ou seja, não existe outro ponteiro que modifique o objeto ao qual
+O qualificador `restrict` diz ao compilador que um ponteiro não tem um `aliasing`, ou seja, que não existe outro ponteiro que modifique o objeto.
+
+Por exemplo, tome o código abaixo.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg0NTU1OTk4OCw1NDkwMDcwODIsLTUxMT
-M3MjQ5Miw1NDkxOTAwMTQsMTkyODU1Nzk2OCw1MDU5NjIzNCw3
-MzA5OTgxMTZdfQ==
+eyJoaXN0b3J5IjpbLTEwNTIzMjEzMTAsNTQ5MDA3MDgyLC01MT
+EzNzI0OTIsNTQ5MTkwMDE0LDE5Mjg1NTc5NjgsNTA1OTYyMzQs
+NzMwOTk4MTE2XX0=
 -->
