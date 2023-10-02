@@ -8,6 +8,10 @@
 /**************
     General
 ***************/
+article.main > div.content {
+    width: 1000px;
+}
+
 article.main > div.content * {
     line-height: 14pt;
 }
@@ -182,7 +186,7 @@ article.main > div.content :where(pre, code) {
 article.main > div.content code:not(div.highlight code) {
     padding: 0.2em 0.4em;
     font-size: 85%;
-    background-color: rgb(92 92 92);
+    background-color: rgb(59 57 57);
     border-radius: 5pt;
     margin-left: 0.2em;
     margin-right: 0.2em;
@@ -205,7 +209,7 @@ article.main > div.content pre:not(div.highlight pre) > code {
 
 /*** Highlight Codeblock ***/
 article.main > div.content div.codeblock {
-    margin-top: -2em;
+    /**/
 }
 article.main > div.content div.codeblock > div.copy-button-box {
     display: inline-flex;
