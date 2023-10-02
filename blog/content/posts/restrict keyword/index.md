@@ -20,7 +20,15 @@ int f(int *a, int *b)
 }
 ```
 
+```asm
+int f(int *a, int *b)
+{
+  
+}
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1MzA3NjYxOSw4MzEwODAwMiwtMTMwNz
-k0Mzc3OCwxODUwOTkwMjQ0LC02MDE2Njk2OTRdfQ==
+eyJoaXN0b3J5IjpbNTAxNzkwNTMsMTk1MzA3NjYxOSw4MzEwOD
+AwMiwtMTMwNzk0Mzc3OCwxODUwOTkwMjQ0LC02MDE2Njk2OTRd
+fQ==
 -->
