@@ -51,12 +51,11 @@ Caso a função `f`, apresentada acima, fosse implementada com a assinatura `lon
 
 ## Conclusão
 
-Caso tenha uma função que tenha mais de 1 ponteiro do mesmo tipo em seus parâmetros, ou que tenha mais de 1 ponteiro e algum deles é do tipo `char`, use o modificador *restrict* para habilitar melhor otimização no código. Claro, contanto que os ponteiros não apontem para o mesmo lugar.
- Utilizar um nível de otimização de, pelo menos, `-O2`. Para habilitar a regra de *aliasing* automaticamente para ponteiros de tipos diferentes.
+Caso tenha uma função que tenha mais de 1 ponteiro do mesmo tipo em seus parâmetros, ou que tenha mais de 1 ponteiro e algum deles é do tipo `char`, use o modificador *restrict* para habilitar melhor otimização no código. Claro, contanto que os ponteiros não apontem para o mesmo lugar. Utilizar um nível de otimização de, pelo menos, `-O2`. Para habilitar a regra de *aliasing* automaticamente para ponteiros de tipos diferentes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODUyNjYzMTA5LDI4ODQ1OTkxMywtMjM3ND
-E4MjMyLDE3ODQ3OTEyMzMsLTUyMzk2NTUwMywtMjAyNzg3ODY2
-NSwtNDg4MDg4MzA1LDY2ODMwNDE1NiwtMTczNzcyMTY0LDE1MD
-EzNDI3OV19
+eyJoaXN0b3J5IjpbLTE0MTA1MTgwNTcsMjg4NDU5OTEzLC0yMz
+c0MTgyMzIsMTc4NDc5MTIzMywtNTIzOTY1NTAzLC0yMDI3ODc4
+NjY1LC00ODgwODgzMDUsNjY4MzA0MTU2LC0xNzM3NzIxNjQsMT
+UwMTM0Mjc5XX0=
 -->
