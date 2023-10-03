@@ -9,7 +9,7 @@ categories: [
 draft: false
 ---
 
-## Entendendo o uso.
+## Entendendo o uso
 
 O qualificador *restrict* diz ao compilador que um ponteiro não tem um *aliasing*, ou seja, não existe outro ponteiro que modifique o objeto. Por exemplo, uma função que possui a assinatura `int f(int *a, int *b)`, os ponteiros `a` e `b` podem apontar para o mesmo objeto. O compilador tem que levar isso em consideração ao gerar o código.
 
@@ -43,14 +43,18 @@ g:
 Na função `f`, temos três acessos à memória. Isso ocorre porque quando atualizamos o valor de `*b`, o compilador não tem garantia de que o objeto `*a` não foi modificado. Assim, para retornar o valor de `*a`, um novo acesso à memória é feito ao invés de, apenas, preservar o valor previamente atribuído.
 A função `g`, devido a não precisar carregar novamente o valor de `*a`, possui um acesso à memória a menos. Aqui o compilador pode assumir que o valor de `*a`não é alterado após a atribuição inicial.
 
-## strict aliasing
+## Strict aliasing
 
 O compilador GCC possui a opção `-fstrictest aliasing`, habilitada nos níveis de otimização`-O2`,` -O3` e `-Os`.  Com essa opção, o compilador segue uma regra que diz, ponteiros de tipos diferentes não apontam para o mesmo objeto. A exceção a regra são ponteiros do tipo `char`, que podem ser *aliases* para qualquer tipo.
 
 Caso a função `f`, apresentada acima, fosse implementada com a assinatura `long f(long *a, int *b)`, ou seja, ponteiros para tipos diferentes e com a opção `-fstrictest aliasing`, teríamos o mesmo efeito de usar o modificador *restrict*. O compilador assumirá, nesse caso, que os ponteiros não apontam para o mesmo objeto e irá otimizar o código.
 
+## Conclusão
+
+Caso tenha funções que recebam como parâmetros mais de 1 ponteiro de mesmo tipo
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ3NDA5MzM4OCwyODg0NTk5MTMsLTIzNz
+eyJoaXN0b3J5IjpbMjE0MTg3NDA0MywyODg0NTk5MTMsLTIzNz
 QxODIzMiwxNzg0NzkxMjMzLC01MjM5NjU1MDMsLTIwMjc4Nzg2
 NjUsLTQ4ODA4ODMwNSw2NjgzMDQxNTYsLTE3Mzc3MjE2NCwxNT
 AxMzQyNzldfQ==
