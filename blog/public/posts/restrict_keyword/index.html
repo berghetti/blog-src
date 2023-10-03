@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="generator" content="Hugo 0.102.3" />
+
+    
+
+    
+
+    
+        
+
+        
+
+        
+
+    
+
+
+    <title>
+        
+            O qualificador &#39;restrict&#39; em C |
+            Blog
+        
+    </title>
+
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+
+
+    
+    
+
+    
+
+    
+
+        
+        
+
+
+        <link
+            rel="stylesheet"
+            href="/css/index.min.4b75df69a8910d21a0e198e66672e0d10cafa27732cc6ecbd5b835c551f80d43af4fac3bd5634ad423fa20e03efbdf84ee120d6ad7637aadef673d9df28d0693.css"
+            integrity="sha512-S3XfaaiRDSGg4ZjmZnLg0QyvoncyzG7L1bg1xVH4DUOvT6w71WNK1CP6IOA&#43;&#43;9&#43;E7hINatdjeq3vZz2d8o0Gkw==" />
+    
+
+</head>
+
+
+
+    <body>
+        <header class="header">
+    <div class="header_left">
+        
+    </div>
+
+    <div class="header_middle">
+        
+            O qualificador &#39;restrict&#39; em C -
+            Blog
+        
+    </div>
+</header>
+
+
+
+        <main>
+            <aside class="sidebar">
+    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li
+                    
+                        class="dir opened-dir"
+                    >
+                    <span class="dir-text"> Posts </span>
+
+                    
+
+
+
+    
+    
+
+    
+    
+
+
+    <ul class="section-tree">
+        
+            
+                <li class="file">
+                    <a href="https://berghetti.github.io/posts/restrict_keyword/" title="./posts/restrict_keyword/">
+                        O qualificador &#39;restrict&#39; em C
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+                </li>
+            
+        
+            
+                <li class="file">
+                    <a href="https://berghetti.github.io/about/" title="./about/">
+                        About
+                    </a>
+                </li>
+            
+        
+    </ul>
+
+
+</aside>
+<aside class="exapandable"></aside>
+
+
+            
+    <article class="main">
+        <button
+    class="sidebar-toggle-btn"
+    type="menu"
+    aria-expanded="false"
+    aria-haspopup="true">
+    <i class="bi bi-list"></i>
+</button>
+
+
+            
+
+        <div class="title">
+
+            <h1 class="title-header">
+                O qualificador &#39;restrict&#39; em C
+            </h1>
+
+            <div class="author-date-readtime">
+
+                
+
+                    
+
+                    
+                    
+                        <div class="author">
+                            <i class="bi bi-person"></i>
+                            <a
+                                href="https://berghetti.github.io/authors/mayco-s.-berghetti/"
+                                class="cat-btn">
+                                Mayco S. Berghetti
+                            </a>
+                        </div>
+                    
+                    
+                    
+
+                
+
+                
+
+                
+            </div>
+        </div>
+
+        <div class="article-meta">
+            
+                <div class="categories">
+                    <i class="bi bi-bookmarks" title="Categories"></i>
+                    
+                        <a
+                            href="https://berghetti.github.io/categories/programming/"
+                            class="cat-btn">
+                            programming
+                        </a>
+                    
+                </div>
+            
+
+            
+                <div class="tags">
+                    <i class="bi bi-tags" title="Tags"></i>
+                    
+                        <a
+                            href="https://berghetti.github.io/tags/c/"
+                            class="tag-btn">
+                            C
+                        </a>
+                    
+                </div>
+            
+
+        </div>
+
+        
+
+
+        <div class="content">
+            
+                <h2 id="entendendo-o-uso">Entendendo o uso</h2>
+<p>O qualificador <em>restrict</em> diz ao compilador que um ponteiro não tem um <em>aliasing</em>, ou seja, não existe outro ponteiro que modifique o objeto <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. Por exemplo, uma função que possui a assinatura <code>int f(int *a, int *b)</code>, os ponteiros <code>a</code> e <code>b</code> podem apontar para o mesmo objeto. O compilador tem que levar isso em consideração ao gerar o código.</p>
+<p>Se sabemos que os ponteiros não apontam para o mesmo objeto, dizemos isso ao compilador usando a palavra-chave <em>restrict</em>.  Isso permite que o código possa ser melhor otimizado.
+Por exemplo, tome as funções <code>f</code> e <code>g</code>abaixo. A única diferença entre elas é a assinatura.</p>
+
+
+
+
+
+
+<div class="codeblock">
+    
+
+    
+        <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// f ( int  *a,  int  *b)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>g( <span style="color:#66d9ef">int</span>  <span style="color:#f92672">*</span><span style="color:#66d9ef">restrict</span> a,  <span style="color:#66d9ef">int</span>  <span style="color:#f92672">*</span><span style="color:#66d9ef">restrict</span> b)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">*</span>a <span style="color:#f92672">=</span>  <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">*</span>b <span style="color:#f92672">=</span>  <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span>  <span style="color:#f92672">*</span>a;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    
+</div>
+<p>Veja o código gerado, com GCC, abaixo.</p>
+
+
+
+
+
+
+<div class="codeblock">
+    
+
+    
+        <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span>f:
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mov</span>  <span style="color:#66d9ef">DWORD</span>  <span style="color:#66d9ef">PTR</span>  [<span style="color:#66d9ef">rdi</span>], <span style="color:#ae81ff">1</span>   <span style="color:#75715e">; *a = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">DWORD</span>  <span style="color:#66d9ef">PTR</span>  [<span style="color:#66d9ef">rsi</span>], <span style="color:#ae81ff">2</span>   <span style="color:#75715e">; *b = 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">eax</span>, <span style="color:#66d9ef">DWORD</span>  <span style="color:#66d9ef">PTR</span>  [<span style="color:#66d9ef">rdi</span>] <span style="color:#75715e">; return *a
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">ret</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>g:
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mov</span>  <span style="color:#66d9ef">DWORD</span>  <span style="color:#66d9ef">PTR</span>  [<span style="color:#66d9ef">rdi</span>], <span style="color:#ae81ff">1</span> <span style="color:#75715e">; *a = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">eax</span>, <span style="color:#ae81ff">1</span>               <span style="color:#75715e">; return 1;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">mov</span>  <span style="color:#66d9ef">DWORD</span>  <span style="color:#66d9ef">PTR</span>  [<span style="color:#66d9ef">rsi</span>], <span style="color:#ae81ff">2</span> <span style="color:#75715e">; *b = 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">ret</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+    
+</div>
+<p>Na função <code>f</code>, temos três acessos à memória. Isso ocorre porque quando atualizamos o valor de <code>*b</code>, o compilador não tem garantia de que o objeto <code>*a</code> não foi modificado. Assim, para retornar o valor de <code>*a</code>, um novo acesso à memória é feito ao invés de, apenas, preservar o valor previamente atribuído.
+A função <code>g</code>, devido a não precisar carregar novamente o valor de <code>*a</code>, possui um acesso à memória a menos. Aqui o compilador pode assumir que o valor de <code>*a</code>não é alterado após a atribuição inicial.</p>
+<h2 id="strict-aliasing">Strict aliasing</h2>
+<p>O compilador GCC possui a opção <code>-fstrictest aliasing</code>, habilitada nos níveis de otimização<code>-O2</code>,<code> -O3</code> e <code>-Os</code><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.  Com essa opção, o compilador segue uma regra que diz, <strong>ponteiros de tipos diferentes não apontam para o mesmo objeto</strong>. A exceção a regra são ponteiros do tipo <code>char</code>, que podem ser <em>aliases</em> para qualquer tipo.</p>
+<p>Caso a função <code>f</code>, apresentada acima, fosse implementada com a assinatura <code>long f(long *a, int *b)</code>, ou seja, ponteiros para tipos diferentes, e compilada com a opção <code>-fstrictest aliasing</code>, teríamos o mesmo efeito de usar o modificador <em>restrict</em>. O compilador assumirá, nesse caso, que os ponteiros não apontam para o mesmo objeto e irá otimizar o código.</p>
+<h2 id="conclusão">Conclusão</h2>
+<p>Caso tenha uma função que tenha mais de 1 ponteiro do mesmo tipo em seus parâmetros, ou que tenha mais de 1 ponteiro e algum deles é do tipo <code>char</code>, use o modificador <em>restrict</em> para habilitar melhor otimização no código. Claro, contanto que os ponteiros não apontem para o mesmo lugar. Utilizar um nível de otimização de, pelo menos, <code>-O2</code>. Para habilitar a regra de <em>aliasing</em> automaticamente para ponteiros de tipos diferentes.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf">https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf</a>, section 6.7.3.7&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html#index-fstrict-aliasing">https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html#index-fstrict-aliasing</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+            
+        </div>
+    </article>
+
+        </main>
+
+        <footer class="footer">
+    <div class="footer-left">
+        <ul class="social">
+            
+
+            
+
+            
+        </ul>
+    </div>
+
+    <div class="footer-right">
+        <ul class="control status clearfix">
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+        </ul>
+    </div>
+</footer>
+
+    </body>
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+    <script
+        type="text/javascript"
+        src="/js/index.min.76f28ad9d7f1e1b68cfc55f930e89f7439bf72c0def552fa19d37555afaaaa776fc8533a913ac30e0162a7fb08415d19d1588e1d9a4f3328f0614c52f1a3963b.js"
+        integrity="sha512-dvKK2dfx4baM/FX5MOifdDm/csDe9VL6GdN1Va&#43;qqndvyFM6kTrDDgFip/sIQV0Z0ViOHZpPMyjwYUxS8aOWOw=="></script>
+
+
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
+
+</html>
