@@ -45,7 +45,7 @@ A função `g`, devido a não precisar carregar novamente o valor de `*a`, possu
 
 ## Strict aliasing
 
-O compilador GCC possui a opção `-fstrictest aliasing`, habilitada nos níveis de otimização`-O2`,` -O3` e `-Os`[\^].  Com essa opção, o compilador segue uma regra que diz, **ponteiros de tipos diferentes não apontam para o mesmo objeto**. A exceção a regra são ponteiros do tipo `char`, que podem ser *aliases* para qualquer tipo.
+O compilador GCC possui a opção `-fstrictest aliasing`, habilitada nos níveis de otimização`-O2`,` -O3` e `-Os`[^1].  Com essa opção, o compilador segue uma regra que diz, **ponteiros de tipos diferentes não apontam para o mesmo objeto**. A exceção a regra são ponteiros do tipo `char`, que podem ser *aliases* para qualquer tipo.
 
 Caso a função `f`, apresentada acima, fosse implementada com a assinatura `long f(long *a, int *b)`, ou seja, ponteiros para tipos diferentes, e compilada com a opção `-fstrictest aliasing`, teríamos o mesmo efeito de usar o modificador *restrict*. O compilador assumirá, nesse caso, que os ponteiros não apontam para o mesmo objeto e irá otimizar o código.
 
@@ -56,9 +56,10 @@ Caso tenha uma função que tenha mais de 1 ponteiro do mesmo tipo em seus parâ
 [^1]: https://gcc.gnu.org/onlinedocs/gcc-4.5.2/gcc/Optimize-Options.html#:~:text=%2DOs.-,%2Dfstrict%2Daliasing,-Allow%20the%20compiler
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI4NTM5NDg5LC0xOTU5NzU2MDAyLC0yMD
-I0NzQxNDY2LC0xNDUwODkwMjIxLDI4ODQ1OTkxMywtMjM3NDE4
-MjMyLDE3ODQ3OTEyMzMsLTUyMzk2NTUwMywtMjAyNzg3ODY2NS
-wtNDg4MDg4MzA1LDY2ODMwNDE1NiwtMTczNzcyMTY0LDE1MDEz
-NDI3OV19
+eyJwcm9wZXJ0aWVzIjoiZXh0ZW5zaW9uczpcbiAgcHJlc2V0Oi
+Bjb21tb25tYXJrXG4iLCJoaXN0b3J5IjpbMTI0MjM1OTQ2NSwt
+MTk1OTc1NjAwMiwtMjAyNDc0MTQ2NiwtMTQ1MDg5MDIyMSwyOD
+g0NTk5MTMsLTIzNzQxODIzMiwxNzg0NzkxMjMzLC01MjM5NjU1
+MDMsLTIwMjc4Nzg2NjUsLTQ4ODA4ODMwNSw2NjgzMDQxNTYsLT
+E3Mzc3MjE2NCwxNTAxMzQyNzldfQ==
 -->
