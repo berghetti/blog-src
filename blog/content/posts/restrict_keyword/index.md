@@ -47,15 +47,15 @@ A função `g`, devido a não precisar carregar novamente o valor de `*a`, possu
 
 O compilador GCC possui a opção `-fstrictest aliasing`, habilitada nos níveis de otimização`-O2`,` -O3` e `-Os`.  Com essa opção, o compilador segue uma regra que diz, **ponteiros de tipos diferentes não apontam para o mesmo objeto**. A exceção a regra são ponteiros do tipo `char`, que podem ser *aliases* para qualquer tipo.
 
-Caso a função `f`, apresentada acima, fosse implementada com a assinatura `long f(long *a, int *b)`, ou seja, ponteiros para tipos diferentes e compilada com a opção `-fstrictest aliasing`, teríamos o mesmo efeito de usar o modificador *restrict*. O compilador assumirá, nesse caso, que os ponteiros não apontam para o mesmo objeto e irá otimizar o código.
+Caso a função `f`, apresentada acima, fosse implementada com a assinatura `long f(long *a, int *b)`, ou seja, ponteiros para tipos diferentes, e compilada com a opção `-fstrictest aliasing`, teríamos o mesmo efeito de usar o modificador *restrict*. O compilador assumirá, nesse caso, que os ponteiros não apontam para o mesmo objeto e irá otimizar o código.
 
 ## Conclusão
 
 Caso tenha uma função que tenha mais de 1 ponteiro do mesmo tipo em seus parâmetros, ou que tenha mais de 1 ponteiro e algum deles é do tipo `char`, use o modificador *restrict* para habilitar melhor otimização no código. Claro, contanto que os ponteiros não apontem para o mesmo lugar. Utilizar um nível de otimização de, pelo menos, `-O2`. Para habilitar a regra de *aliasing* automaticamente para ponteiros de tipos diferentes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5MjU4MjIzNywyODg0NTk5MTMsLTIzNz
-QxODIzMiwxNzg0NzkxMjMzLC01MjM5NjU1MDMsLTIwMjc4Nzg2
-NjUsLTQ4ODA4ODMwNSw2NjgzMDQxNTYsLTE3Mzc3MjE2NCwxNT
-AxMzQyNzldfQ==
+eyJoaXN0b3J5IjpbLTE0NTA4OTAyMjEsMjg4NDU5OTEzLC0yMz
+c0MTgyMzIsMTc4NDc5MTIzMywtNTIzOTY1NTAzLC0yMDI3ODc4
+NjY1LC00ODgwODgzMDUsNjY4MzA0MTU2LC0xNzM3NzIxNjQsMT
+UwMTM0Mjc5XX0=
 -->
