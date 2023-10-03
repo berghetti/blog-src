@@ -11,7 +11,7 @@ draft: false
 
 ## Entendendo o uso
 
-O qualificador *restrict* diz ao compilador que um ponteiro não tem um *aliasing*, ou seja, não existe outro ponteiro que modifique o objeto. Por exemplo, uma função que possui a assinatura `int f(int *a, int *b)`, os ponteiros `a` e `b` podem apontar para o mesmo objeto. O compilador tem que levar isso em consideração ao gerar o código.
+O qualificador *restrict* diz ao compilador que um ponteiro não tem um *aliasing*, ou seja, não existe outro ponteiro que modifique o objeto [^1]. Por exemplo, uma função que possui a assinatura `int f(int *a, int *b)`, os ponteiros `a` e `b` podem apontar para o mesmo objeto. O compilador tem que levar isso em consideração ao gerar o código.
 
 Se sabemos que os ponteiros não apontam para o mesmo objeto, dizemos isso ao compilador usando a palavra-chave *restrict*.  Isso permite que o código possa ser melhor otimizado.
 Por exemplo, tome as funções `f` e `g`abaixo. A única diferença entre elas é a assinatura.
@@ -45,7 +45,7 @@ A função `g`, devido a não precisar carregar novamente o valor de `*a`, possu
 
 ## Strict aliasing
 
-O compilador GCC possui a opção `-fstrictest aliasing`, habilitada nos níveis de otimização`-O2`,` -O3` e `-Os`[^1].  Com essa opção, o compilador segue uma regra que diz, **ponteiros de tipos diferentes não apontam para o mesmo objeto**. A exceção a regra são ponteiros do tipo `char`, que podem ser *aliases* para qualquer tipo.
+O compilador GCC possui a opção `-fstrictest aliasing`, habilitada nos níveis de otimização`-O2`,` -O3` e `-Os`[^2].  Com essa opção, o compilador segue uma regra que diz, **ponteiros de tipos diferentes não apontam para o mesmo objeto**. A exceção a regra são ponteiros do tipo `char`, que podem ser *aliases* para qualquer tipo.
 
 Caso a função `f`, apresentada acima, fosse implementada com a assinatura `long f(long *a, int *b)`, ou seja, ponteiros para tipos diferentes, e compilada com a opção `-fstrictest aliasing`, teríamos o mesmo efeito de usar o modificador *restrict*. O compilador assumirá, nesse caso, que os ponteiros não apontam para o mesmo objeto e irá otimizar o código.
 
@@ -53,12 +53,14 @@ Caso a função `f`, apresentada acima, fosse implementada com a assinatura `lon
 
 Caso tenha uma função que tenha mais de 1 ponteiro do mesmo tipo em seus parâmetros, ou que tenha mais de 1 ponteiro e algum deles é do tipo `char`, use o modificador *restrict* para habilitar melhor otimização no código. Claro, contanto que os ponteiros não apontem para o mesmo lugar. Utilizar um nível de otimização de, pelo menos, `-O2`. Para habilitar a regra de *aliasing* automaticamente para ponteiros de tipos diferentes.
 
-[^1]: https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html#index-fstrict-aliasing
+[^
+[^2]: https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html#index-fstrict-aliasing
 <!--stackedit_data:
 eyJwcm9wZXJ0aWVzIjoiZXh0ZW5zaW9uczpcbiAgcHJlc2V0Oi
-Bjb21tb25tYXJrXG4iLCJoaXN0b3J5IjpbMTYzNjk5MzE3MSwx
-MjQyMzU5NDY1LC0xOTU5NzU2MDAyLC0yMDI0NzQxNDY2LC0xND
-UwODkwMjIxLDI4ODQ1OTkxMywtMjM3NDE4MjMyLDE3ODQ3OTEy
-MzMsLTUyMzk2NTUwMywtMjAyNzg3ODY2NSwtNDg4MDg4MzA1LD
-Y2ODMwNDE1NiwtMTczNzcyMTY0LDE1MDEzNDI3OV19
+Bjb21tb25tYXJrXG4iLCJoaXN0b3J5IjpbLTE2MTc1MDI3Nzcs
+MTYzNjk5MzE3MSwxMjQyMzU5NDY1LC0xOTU5NzU2MDAyLC0yMD
+I0NzQxNDY2LC0xNDUwODkwMjIxLDI4ODQ1OTkxMywtMjM3NDE4
+MjMyLDE3ODQ3OTEyMzMsLTUyMzk2NTUwMywtMjAyNzg3ODY2NS
+wtNDg4MDg4MzA1LDY2ODMwNDE1NiwtMTczNzcyMTY0LDE1MDEz
+NDI3OV19
 -->
