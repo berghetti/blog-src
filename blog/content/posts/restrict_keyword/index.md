@@ -53,13 +53,12 @@ Caso a função `f`, apresentada acima, fosse implementada com a assinatura `lon
 
 Caso tenha uma função que tenha mais de 1 ponteiro do mesmo tipo em seus parâmetros, ou que tenha mais de 1 ponteiro e algum deles é do tipo `char`, use o modificador *restrict* para habilitar melhor otimização no código. Claro, contanto que os ponteiros não apontem para o mesmo lugar. Utilizar um nível de otimização de, pelo menos, `-O2`. Para habilitar a regra de *aliasing* automaticamente para ponteiros de tipos diferentes.
 
-[^1]: https://gcc.gnu.org/onlinedocs/gcc-4.5.2/gcc/Optimize-Options.html#:~:text=%2DOs.-,%2Dfstrict%2Daliasing,-Allow%20the%20compiler
-
+[^1]: https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html#index-fstrict-aliasing
 <!--stackedit_data:
 eyJwcm9wZXJ0aWVzIjoiZXh0ZW5zaW9uczpcbiAgcHJlc2V0Oi
-Bjb21tb25tYXJrXG4iLCJoaXN0b3J5IjpbMTI0MjM1OTQ2NSwt
-MTk1OTc1NjAwMiwtMjAyNDc0MTQ2NiwtMTQ1MDg5MDIyMSwyOD
-g0NTk5MTMsLTIzNzQxODIzMiwxNzg0NzkxMjMzLC01MjM5NjU1
-MDMsLTIwMjc4Nzg2NjUsLTQ4ODA4ODMwNSw2NjgzMDQxNTYsLT
-E3Mzc3MjE2NCwxNTAxMzQyNzldfQ==
+Bjb21tb25tYXJrXG4iLCJoaXN0b3J5IjpbMTYzNjk5MzE3MSwx
+MjQyMzU5NDY1LC0xOTU5NzU2MDAyLC0yMDI0NzQxNDY2LC0xND
+UwODkwMjIxLDI4ODQ1OTkxMywtMjM3NDE4MjMyLDE3ODQ3OTEy
+MzMsLTUyMzk2NTUwMywtMjAyNzg3ODY2NSwtNDg4MDg4MzA1LD
+Y2ODMwNDE1NiwtMTczNzcyMTY0LDE1MDEzNDI3OV19
 -->
