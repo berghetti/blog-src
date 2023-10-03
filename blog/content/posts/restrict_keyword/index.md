@@ -45,10 +45,12 @@ A função `g`, devido a não precisar carregar novamente o valor de `*a`, possu
 
 ## strict aliasing
 
-O compilador GCC possui a opção `-fstrictest aliasing`, habilitada nos níveis de otimização`-O2`,` -O3` e `-Os`.  Com essa opção, o compilador segue uma regra que diz, ponteiros de tipos diferentes não apontam para o mesmo objeto. A exceção a regra são ponteiros do tipo `char`, que podem ser aliases
+O compilador GCC possui a opção `-fstrictest aliasing`, habilitada nos níveis de otimização`-O2`,` -O3` e `-Os`.  Com essa opção, o compilador segue uma regra que diz, ponteiros de tipos diferentes não apontam para o mesmo objeto. A exceção a regra são ponteiros do tipo `char`, que podem ser *aliases* para qualquer tipo.
+
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYyMjM4NzgwNywtMjM3NDE4MjMyLDE3OD
-Q3OTEyMzMsLTUyMzk2NTUwMywtMjAyNzg3ODY2NSwtNDg4MDg4
-MzA1LDY2ODMwNDE1NiwtMTczNzcyMTY0LDE1MDEzNDI3OV19
+eyJoaXN0b3J5IjpbMjg4NDU5OTEzLC0yMzc0MTgyMzIsMTc4ND
+c5MTIzMywtNTIzOTY1NTAzLC0yMDI3ODc4NjY1LC00ODgwODgz
+MDUsNjY4MzA0MTU2LC0xNzM3NzIxNjQsMTUwMTM0Mjc5XX0=
 -->
