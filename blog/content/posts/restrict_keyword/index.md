@@ -47,10 +47,11 @@ A função `g`, devido a não precisar carregar novamente o valor de `*a`, possu
 
 O compilador GCC possui a opção `-fstrictest aliasing`, habilitada nos níveis de otimização`-O2`,` -O3` e `-Os`.  Com essa opção, o compilador segue uma regra que diz, ponteiros de tipos diferentes não apontam para o mesmo objeto. A exceção a regra são ponteiros do tipo `char`, que podem ser *aliases* para qualquer tipo.
 
-
+Se compilarmos um código com essa opção habilitada, 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg4NDU5OTEzLC0yMzc0MTgyMzIsMTc4ND
-c5MTIzMywtNTIzOTY1NTAzLC0yMDI3ODc4NjY1LC00ODgwODgz
-MDUsNjY4MzA0MTU2LC0xNzM3NzIxNjQsMTUwMTM0Mjc5XX0=
+eyJoaXN0b3J5IjpbLTE0MTEzMDExOTQsMjg4NDU5OTEzLC0yMz
+c0MTgyMzIsMTc4NDc5MTIzMywtNTIzOTY1NTAzLC0yMDI3ODc4
+NjY1LC00ODgwODgzMDUsNjY4MzA0MTU2LC0xNzM3NzIxNjQsMT
+UwMTM0Mjc5XX0=
 -->
