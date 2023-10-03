@@ -51,10 +51,10 @@ Caso a função `f`, apresentada acima, fosse implementada com a assinatura `lon
 
 ## Conclusão
 
-Caso tenha funções que recebam como parâmetros mais de 1 ponteiro de mesmo tipo
+Caso tenha uma função que tenha mais de 1 ponteiro de mesmo tipo em seus parâmetros e, principalmente, saibamos que eles não apontam para o mesmo objeto, use o modificador *restrict* para habilitar melhor otimização no código.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE0MTg3NDA0MywyODg0NTk5MTMsLTIzNz
+eyJoaXN0b3J5IjpbMTkyOTIxODExNiwyODg0NTk5MTMsLTIzNz
 QxODIzMiwxNzg0NzkxMjMzLC01MjM5NjU1MDMsLTIwMjc4Nzg2
 NjUsLTQ4ODA4ODMwNSw2NjgzMDQxNTYsLTE3Mzc3MjE2NCwxNT
 AxMzQyNzldfQ==
