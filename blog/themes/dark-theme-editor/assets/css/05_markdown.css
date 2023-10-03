@@ -318,7 +318,15 @@ article.main > div.content dd {
 ***************/
 article.main > div.content sup {
     vertical-align: super;
-    font-size: 80%;
+    font-size: 85%;
+}
+
+a.footnote-ref::before {
+    content: '[';
+}
+
+a.footnote-ref::after {
+    content: ']';
 }
 
 article.main > div.content sub {
