@@ -45,9 +45,10 @@ A função `g`, devido a não precisar carregar novamente o valor de `*a`, possu
 
 ## strict aliasing
 
-O GCC possui a opção `strictest aliasing`
+O compilador GCC possui a opção `-fstrictest aliasing`, que é habilitada no niveis `-O2`,` -O3` e `-Os`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE0MDc1MTE5NSwtMjM3NDE4MjMyLDE3OD
-Q3OTEyMzMsLTUyMzk2NTUwMywtMjAyNzg3ODY2NSwtNDg4MDg4
-MzA1LDY2ODMwNDE1NiwtMTczNzcyMTY0LDE1MDEzNDI3OV19
+eyJoaXN0b3J5IjpbLTE1ODgzOTQ2OTcsLTIzNzQxODIzMiwxNz
+g0NzkxMjMzLC01MjM5NjU1MDMsLTIwMjc4Nzg2NjUsLTQ4ODA4
+ODMwNSw2NjgzMDQxNTYsLTE3Mzc3MjE2NCwxNTAxMzQyNzldfQ
+==
 -->
