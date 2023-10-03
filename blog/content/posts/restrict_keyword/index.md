@@ -42,8 +42,12 @@ g:
 ```
 Na função `f`, temos três acessos à memória. Isso ocorre porque quando atualizamos o valor de `*b`, o compilador não tem garantia de que o objeto `*a` não foi modificado. Assim, para retornar o valor de `*a`, um novo acesso à memória é feito ao invés de, apenas, preservar o valor previamente atribuído.
 A função `g`, devido a não precisar carregar novamente o valor de `*a`, possui um acesso à memória a menos. Aqui o compilador pode assumir que o valor de `*a`não é alterado após a atribuição inicial.
+
+## strict aliasing
+
+O GCC possui a opção `strictest aliasing`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ2OTcwNjk5MSwtMjM3NDE4MjMyLDE3OD
+eyJoaXN0b3J5IjpbMTE0MDc1MTE5NSwtMjM3NDE4MjMyLDE3OD
 Q3OTEyMzMsLTUyMzk2NTUwMywtMjAyNzg3ODY2NSwtNDg4MDg4
 MzA1LDY2ODMwNDE1NiwtMTczNzcyMTY0LDE1MDEzNDI3OV19
 -->
