@@ -9,7 +9,7 @@ categories: [
 draft: false
 ---
 
-## 
+## Entendendo o uso.
 
 O qualificador *restrict* diz ao compilador que um ponteiro não tem um *aliasing*, ou seja, não existe outro ponteiro que modifique o objeto. Por exemplo, uma função que possui a assinatura `int f(int *a, int *b)`, os ponteiros `a` e `b` podem apontar para o mesmo objeto. O compilador tem que levar isso em consideração ao gerar o código.
 
@@ -43,7 +43,7 @@ g:
 Na função `f`, temos três acessos à memória. Isso ocorre porque quando atualizamos o valor de `*b`, o compilador não tem garantia de que o objeto `*a` não foi modificado. Assim, para retornar o valor de `*a`, um novo acesso à memória é feito ao invés de, apenas, preservar o valor previamente atribuído.
 A função `g`, devido a não precisar carregar novamente o valor de `*a`, possui um acesso à memória a menos. Aqui o compilador pode assumir que o valor de `*a`não é alterado após a atribuição inicial.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUwMzcxOTc3MSwxNzg0NzkxMjMzLC01Mj
+eyJoaXN0b3J5IjpbMTQ2OTcwNjk5MSwxNzg0NzkxMjMzLC01Mj
 M5NjU1MDMsLTIwMjc4Nzg2NjUsLTQ4ODA4ODMwNSw2NjgzMDQx
 NTYsLTE3Mzc3MjE2NCwxNTAxMzQyNzldfQ==
 -->
