@@ -24,7 +24,7 @@ g( int  *restrict a,  int  *restrict b)
   return  *a;
 }
 ```
-Veja o código, gerado com GCC, abaixo. 
+Veja o código gerado, com GCC, abaixo. 
 ```asm
 f:
   mov  DWORD  PTR  [rdi], 1   ; *a = 1
@@ -41,7 +41,7 @@ g:
 Na função `f`, temos três acessos à memória. Isso ocorre porque quando atualizamos o valor de `*b`, o compilador não tem garantia de que o objeto `*a` não foi modificado. Assim, para retornar o valor de `*a`, um novo acesso à memória é feito ao invés de, apenas, preservar o valor previamente atribuído.
 A função `g`, devido a não precisar carregar novamente o valor de `*a`, possui um acesso à memória a menos. Aqui o compilador pode assumir que o valor de `*a`não é alterado após a atribuição inicial.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Mjc5MzI0NTUsLTUyMzk2NTUwMywtMj
-AyNzg3ODY2NSwtNDg4MDg4MzA1LDY2ODMwNDE1NiwtMTczNzcy
-MTY0LDE1MDEzNDI3OV19
+eyJoaXN0b3J5IjpbMTc4NDc5MTIzMywtNTIzOTY1NTAzLC0yMD
+I3ODc4NjY1LC00ODgwODgzMDUsNjY4MzA0MTU2LC0xNzM3NzIx
+NjQsMTUwMTM0Mjc5XX0=
 -->
