@@ -8,7 +8,7 @@ git pull > /dev/null
 # generate static files in public folder
 echo "Creating files in public folder"
 pushd blog > /dev/null
-hugo
+hugo --minify
 popd
 
 #push public folder to cloud (i.e github)
