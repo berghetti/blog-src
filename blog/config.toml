@@ -31,3 +31,7 @@ enableGitInfo = true
   category = 'categories'
   tag = 'tags'
   author = 'authors'
+
+[services]
+  [services.disqus]
+    shortname = 'berghetti'
