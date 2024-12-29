@@ -3,11 +3,11 @@
 #
 # fetch changes made online (i.e stackedit.io)
 echo "Update from guthub"
-git pull > /dev/null
+git pull
 
 # generate static files in public folder
 echo "Creating files in public folder"
-pushd blog > /dev/null
+pushd blog
 hugo --minify
 popd
 
@@ -16,5 +16,5 @@ echo "Pushing blog in guthub"
 pushd blog/public
 git add .
 git commit -m "update blog"
-git push > /dev/null
+git push
 popd
