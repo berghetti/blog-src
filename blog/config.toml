@@ -10,6 +10,13 @@ enableGitInfo = true
 [params.header]
   title = "Blog"
 
+[params]
+  math = true
+
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime"]
+
+
 # syntax highlight
 [markup]
   [markup.highlight]
@@ -26,6 +33,13 @@ enableGitInfo = true
     noHl = false
     style = 'monokai'
     tabWidth = 2
+  [markup.goldmark]
+  [markup.goldmark.extensions]
+    [markup.goldmark.extensions.passthrough]
+      enable = true
+      [markup.goldmark.extensions.passthrough.delimiters]
+        block = [['\[', '\]'], ['$$', '$$']]
+        inline = [['\(', '\)']]
 
 [taxonomies]
   category = 'categories'
